@@ -1,0 +1,171 @@
+/* General Styles */
+body {
+    background-color: #fff;
+    color: #000;
+}
+
+.nav-link {
+    color: black !important;
+}
+
+.nav-link:hover {
+    color: gold !important;
+}
+
+.nav-underline .nav-link {
+    position: relative;
+}
+
+.nav-underline .nav-link::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 100%;
+    height: 2px;
+    background-color: gold;
+    transform: scaleX(0);
+    transition: transform 0.3s ease-in-out;
+}
+
+.nav-underline .nav-link:hover::after {
+    transform: scaleX(1);
+}
+
+.navbar-brand img {
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+}
+
+/* Account Button Styling */
+.account-btn {
+    margin-left: auto;
+}
+
+.btn-gold {
+    background: var(--gold);
+    color: var(--black);
+    font-weight: bold;
+    border-radius: 50px;
+    padding: 10px 20px;
+    transition: all 0.3s ease-in-out;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.btn-gold:hover {
+    background: var(--black);
+    color: var(--gold);
+    box-shadow: 0 0 10px rgba(212, 175, 55, 0.7);
+}
+
+/* Responsive Alignment */
+@media (max-width: 992px) {
+    .account-btn {
+        margin-left: 0;
+        margin-top: 10px;
+        text-align: center;
+    }
+}
+
+/* Card Styles */
+.card {
+    border: 1px solid #B8860B;
+    background-color: white;
+    color: black;
+    height: 450px;
+    width: 400px;
+}
+
+.btn-primary {
+    background-color: #B8860B;
+    border: none;
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: #DAA520;
+}
+
+/* Footer Styles */
+.footer {
+    background: linear-gradient(135deg, #000, #222);
+    color: white;
+    padding: 60px 0;
+    text-align: center;
+    position: relative;
+    font-family: 'Poppins', sans-serif;
+}
+
+.footer a {
+    color: gold;
+    text-decoration: none;
+    transition: all 0.3s ease-in-out;
+}
+
+.footer a:hover {
+    color: white;
+    text-shadow: 0 0 15px gold;
+}
+
+.footer-icons a {
+    font-size: 30px;
+    margin: 0 12px;
+    display: inline-block;
+    color: gold;
+    transition: transform 0.3s ease-in-out, color 0.3s;
+}
+
+.footer-icons a:hover {
+    color: white;
+    transform: scale(1.4) rotate(8deg);
+}
+
+.footer hr {
+    width: 70%;
+    margin: 25px auto;
+    border: 1px solid gold;
+}
+
+.footer p {
+    font-size: 16px;
+    opacity: 0.9;
+    margin-top: 10px;
+}
+
+.footer .logo {
+    font-size: 28px;
+    font-weight: bold;
+    color: gold;
+    margin-bottom: 15px;
+    display: inline-block;
+}
+
+.footer .newsletter {
+    margin-top: 20px;
+}
+
+.footer .newsletter input {
+    padding: 10px;
+    width: 250px;
+    border: none;
+    border-radius: 25px;
+    margin-right: 10px;
+}
+
+.footer .newsletter button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 25px;
+    background: gold;
+    color: black;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.footer .newsletter button:hover {
+    background: white;
+    color: gold;
+}

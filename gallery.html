@@ -41,6 +41,37 @@
             width: 100px;
             border-radius: 50%;
         }
+        /* Account Button Styling */
+.account-btn {
+    margin-left: auto; /* Pushes the button to the right */
+}
+
+.btn-gold {
+    background: var(--gold);
+    color: var(--black);
+    font-weight: bold;
+    border-radius: 50px;
+    padding: 10px 20px;
+    transition: all 0.3s ease-in-out;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.btn-gold:hover {
+    background: var(--black);
+    color: var(--gold);
+    box-shadow: 0 0 10px rgba(212, 175, 55, 0.7);
+}
+
+/* Responsive Alignment */
+@media (max-width: 992px) {
+    .account-btn {
+        margin-left: 0; /* Centers it on smaller screens */
+        margin-top: 10px;
+        text-align: center;
+    }
+}
+
         .gallery {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -162,43 +193,97 @@
             <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
                 <ul class="navbar-nav nav-underline">
                     <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
                     <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
                     <li class="nav-item"><a class="nav-link" href="contact.html">Contact Us</a></li>
                     <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
                 </ul>
             </div>
+            <div class="account-btn">
+                <a href="account.html" class="btn btn-gold">
+                    <i class='bx bx-user'></i> Account
+                </a>
+            </div>
+            
+            
         </div>
     </nav>
     <div class="container mt-4">
         <h1 class="text-center text-dark">The Eventor Gallery</h1>
         <p class="text-center text-dark">A collection of our best event moments.</p>
+        
         <div class="gallery">
-            <img src="colouring.jpg" alt="Event 1" onclick="openLightbox(this)">
-            <img src="confrence1.jpg" alt="Event 2" onclick="openLightbox(this)">
-            <img src="corporateevents.jpg" alt="Event 3" onclick="openLightbox(this)">
-            <img src="ourpple.jpg" alt="Event 4" onclick="openLightbox(this)">
-            <img src="audience.jpg" alt="Event 5" onclick="openLightbox(this)">
-            <img src="weddingevent.jpg" alt="Event 6" onclick="openLightbox(this)">
-            <img src="glitter.jpg" alt="Event 5" onclick="openLightbox(this)">
-            <img src="manybaloons.jpg" alt="Event 6" onclick="openLightbox(this)">
+            <img src="colouring.jpg" alt="Event 1" onclick="openLightbox(0)">
+            <img src="confrence1.jpg" alt="Event 2" onclick="openLightbox(1)">
+            <img src="corporateevents.jpg" alt="Event 3" onclick="openLightbox(2)">
+            <img src="ourpple.jpg" alt="Event 4" onclick="openLightbox(3)">
+            <img src="audience.jpg" alt="Event 5" onclick="openLightbox(4)">
+            <img src="weddingevent.jpg" alt="Event 6" onclick="openLightbox(5)">
+            <img src="glitter.jpg" alt="Event 7" onclick="openLightbox(6)">
+            <img src="manybaloons.jpg" alt="Event 8" onclick="openLightbox(7)">
+            <img src="flameperson.jpg" alt="Event 9" onclick="openLightbox(4)">
+            <img src="actualflamegirl.jpg" alt="Event 10" onclick="openLightbox(5)">
+            <img src="concert4.jpg" alt="Event 11" onclick="openLightbox(6)">
+            <img src="concert3.jpg" alt="Event 12" onclick="openLightbox(7)">
         </div>
     </div>
-
-    <div class="lightbox" id="lightbox" onclick="closeLightbox()">
-        <span class="close">&times;</span>
+    
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox">
+        <span class="close" onclick="closeLightbox()">&times;</span>
+        <span class="prev" onclick="prevImage()">&#10094;</span>
         <img id="lightbox-img">
+        <span class="next" onclick="nextImage()">&#10095;</span>
     </div>
-
     <script>
-        function openLightbox(img) {
-            document.getElementById('lightbox').style.display = 'flex';
-            document.getElementById('lightbox-img').src = img.src;
+    
+
+    const images = document.querySelectorAll(".gallery img"); // Get all gallery images
+    let currentIndex = 0; // Track current image index
+    
+    function openLightbox(index) {
+        currentIndex = index;
+        document.getElementById("lightbox").style.display = "flex";
+        updateLightboxImage();
+    }
+    
+    function updateLightboxImage() {
+        document.getElementById("lightbox-img").src = images[currentIndex].src;
+    }
+    
+    function closeLightbox() {
+        document.getElementById("lightbox").style.display = "none";
+    }
+    
+    // Navigate to previous image
+    function prevImage() {
+        currentIndex = (currentIndex - 1 + images.length) % images.length;
+        updateLightboxImage();
+    }
+    
+    // Navigate to next image
+    function nextImage() {
+        currentIndex = (currentIndex + 1) % images.length;
+        updateLightboxImage();
+    }
+    
+    // Close lightbox when clicking outside the image
+    document.getElementById("lightbox").addEventListener("click", function (event) {
+        if (event.target === this) {
+            closeLightbox();
         }
-        function closeLightbox() {
-            document.getElementById('lightbox').style.display = 'none';
+    });
+    
+    // Keyboard support for navigation
+    document.addEventListener("keydown", function (event) {
+        if (document.getElementById("lightbox").style.display === "flex") {
+            if (event.key === "ArrowLeft") prevImage();
+            if (event.key === "ArrowRight") nextImage();
+            if (event.key === "Escape") closeLightbox();
         }
-    </script>
+    });
+</script>
+    
 
 <footer class="footer">
     <div class="container">

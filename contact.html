@@ -37,6 +37,38 @@
         .nav-underline .nav-link:hover::after {
             transform: scaleX(1);
         }
+
+        /* Account Button Styling */
+.account-btn {
+    margin-left: auto; /* Pushes the button to the right */
+}
+
+.btn-gold {
+    background: var(--gold);
+    color: var(--black);
+    font-weight: bold;
+    border-radius: 50px;
+    padding: 10px 20px;
+    transition: all 0.3s ease-in-out;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.btn-gold:hover {
+    background: var(--black);
+    color: var(--gold);
+    box-shadow: 0 0 10px rgba(212, 175, 55, 0.7);
+}
+
+/* Responsive Alignment */
+@media (max-width: 992px) {
+    .account-btn {
+        margin-left: 0; /* Centers it on smaller screens */
+        margin-top: 10px;
+        text-align: center;
+    }
+}
+
         
         .contact-banner {
             position: relative;
@@ -187,12 +219,19 @@
             <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
                 <ul class="navbar-nav nav-underline">
                     <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
                     <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
                     <li class="nav-item"><a class="nav-link" href="contact.html">Contact Us</a></li>
                     <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
                 </ul>
             </div>
+            <div class="account-btn">
+                <a href="account.html" class="btn btn-gold">
+                    <i class='bx bx-user'></i> Account
+                </a>
+            </div>
+            
+            
         </div>
     </nav>
     

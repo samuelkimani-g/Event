@@ -45,10 +45,43 @@
             width: 100px;
             border-radius: 50%;
         }
+        /* Account Button Styling */
+.account-btn {
+    margin-left: auto; /* Pushes the button to the right */
+}
+
+.btn-gold {
+    background: var(--gold);
+    color: var(--black);
+    font-weight: bold;
+    border-radius: 50px;
+    padding: 10px 20px;
+    transition: all 0.3s ease-in-out;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.btn-gold:hover {
+    background: var(--black);
+    color: var(--gold);
+    box-shadow: 0 0 10px rgba(212, 175, 55, 0.7);
+}
+
+/* Responsive Alignment */
+@media (max-width: 992px) {
+    .account-btn {
+        margin-left: 0; /* Centers it on smaller screens */
+        margin-top: 10px;
+        text-align: center;
+    }
+}
+
         .card {
             border: 1px solid #B8860B;
             background-color: white;
             color: black;
+            height: 470px;
+            width: 400px;
         }
         .btn-primary {
             background-color: #B8860B;
@@ -141,50 +174,57 @@
             <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
                 <ul class="navbar-nav nav-underline">
                     <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
                     <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
                     <li class="nav-item"><a class="nav-link" href="contact.html">Contact Us</a></li>
                     <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
                 </ul>
             </div>
+            <div class="account-btn">
+                <a href="account.html" class="btn btn-gold">
+                    <i class='bx bx-user'></i> Account
+                </a>
+            </div>
+            
+            
         </div>
     </nav>
 
     <div class="container mt-5">
-        <h1 class="text-center text-dark">Weddings & Party Planning</h1>
-        <p class="text-center text-dark">Let us create magical memories for your special day.</p>
+        <h1 class="text-center text-dark">Wedding Planning</h1>
+        <p class="text-center text-dark">Make your wedding day unforgettable with our exclusive packages.</p>
         
         <div class="row mt-4">
             <div class="col-md-4">
                 <div class="card">
                     <img src="weddingevent.jpg" class="card-img-top" alt="Wedding Package 1">
                     <div class="card-body">
-                        <h5 class="card-title">Wedding Basic Package</h5>
-                        <p class="card-text"><i class='bx bx-check-circle'></i> Includes venue, decor, and catering.</p>
+                        <h5 class="card-title">Basic Wedding Package</h5>
+                        <p class="card-text"><i class='bx bx-check-circle'></i> Includes venue, decorations, and catering.</p>
                         <p><strong>Price: KSH 100,000</strong></p>
-                        <button class="btn btn-primary" onclick="bookEvent('Wedding Basic')">Book Now</button>
+                        <button class="btn btn-primary" onclick="bookEvent('Basic Wedding')">Book Now</button>
                     </div>
                 </div>
             </div>
             <div class="col-md-4">
                 <div class="card">
-                    <img src="beachevent.jpg" class="card-img-top" alt="Wedding Package 2">
+                    <img src="weddinggg.avif" class="card-img-top" alt="Wedding Package 2">
                     <div class="card-body">
-                        <h5 class="card-title">Wedding Premium Package</h5>
-                        <p class="card-text"><i class='bx bx-check-circle'></i> Includes live entertainment, photography, and luxury setup.</p>
+                        <h5 class="card-title">Premium Wedding Package</h5>
+                        <p class="card-text"><i class='bx bx-check-circle'></i> Includes themed decorations, entertainment, and photography.</p>
                         <p><strong>Price: KSH 250,000</strong></p>
-                        <button class="btn btn-primary" onclick="bookEvent('Wedding Premium')">Book Now</button>
+                        <button class="btn btn-primary" onclick="bookEvent('Premium Wedding')">Book Now</button>
                     </div>
                 </div>
             </div>
             <div class="col-md-4">
                 <div class="card">
-                    <img src="birthdaydeco.jpg" class="card-img-top" alt="Party Package 1">
+                    <img src="ventures.jpg" class="card-img-top" alt="Wedding Package 3">
                     <div class="card-body">
-                        <h5 class="card-title">Birthday Party Package</h5>
-                        <p class="card-text"><i class='bx bx-check-circle'></i> Perfect for birthdays with decor, cake, and music.</p>
-                        <p><strong>Price: KSH 50,000</strong></p>
-                        <button class="btn btn-primary" onclick="bookEvent('Birthday Party')">Book Now</button>
+                        <h5 class="card-title">Luxury Wedding Package</h5>
+                        <p class="card-text"><i class='bx bx-check-circle'></i> Includes VIP setup, live entertainment, and premium catering.</p>
+                        <p><strong>Price: KSH 500,000</strong></p>
+                        <button class="btn btn-primary" onclick="bookEvent('Luxury Wedding')">Book Now</button>
                     </div>
                 </div>
             </div>
@@ -194,7 +234,7 @@
             <div class="col-md-6 text-center">
                 <h3>Customer Testimonials</h3>
                 <p><i class='bx bx-message-rounded-dots'></i> "The team made our wedding absolutely perfect! Everything was seamless and beautiful." - Sarah & James</p>
-                <p><i class='bx bx-message-rounded-dots'></i> "My birthday party was a blast! Great planning and decorations." - Alex</p>
+                <p><i class='bx bx-message-rounded-dots'></i> "Our wedding was a dream come true! Exceptional planning and decorations." - Alex & Linda</p>
             </div>
             <div class="col-md-6 text-center">
                 <h3>Special Services</h3>
@@ -227,5 +267,8 @@
             </div>
         </div>
     </footer>
+
+
+    <script src="script.js"></script>
 </body>
 </html>
